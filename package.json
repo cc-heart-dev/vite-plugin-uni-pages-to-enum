@@ -1,0 +1,21 @@
+{
+  "name": "vite-plugin-uni-pages-to-enum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vite-plugin",
+    "uni-app",
+    "pages-to-enum"
+  ],
+  "author": "carl chen",
+  "license": "MIT",
+  "devDependencies": {
+    "@cc-heart/utils": "^5.2.0",
+    "@types/node": "^20.12.12",
+    "json5": "^2.2.3"
+  }
+}

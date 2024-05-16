@@ -1,0 +1,39 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+copy.sh
+
+app.development.yaml
+
+# vercel ci error
+pnpm-lock.yaml
+coverage
+.obsidian
+
+ssl.key
+ssl.pem
+.upic-vscode
+gen-export.config.
+bin/deploy.mjs
+dist.tar
