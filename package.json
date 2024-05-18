@@ -1,18 +1,37 @@
 {
   "name": "@cc-heart/vite-plugin-uni-pages-to-enum",
   "version": "0.0.1",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "description": "a plugin that transforms uni-app pages.json",
-  "keywords": [
-    "vite-plugin",
-    "uni-app",
-    "pages-to-enum"
-  ],
+  "keywords": ["vite-plugin", "uni-app", "pages-to-enum"],
   "author": "carl chen",
   "license": "MIT",
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "exports": {
+    ".": [
+      {
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      }
+    ],
+    "./*": "./*"
+  },
+  "scripts": {
+    "compile": "rollup -c"
+  },
   "devDependencies": {
     "@cc-heart/utils": "^5.2.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^20.12.12",
     "json5": "^2.2.3",
+    "rollup": "^4.17.2",
+    "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.4.5"
   }
 }

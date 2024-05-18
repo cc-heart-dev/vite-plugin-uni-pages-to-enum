@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import JSON5 from "json5";
-import { defineOnceFn, pipe } from "@cc-heart/utils";
+import { defineOnceFn, noop, pipe } from "@cc-heart/utils";
 
 interface EnumField {
   field: string;
@@ -17,6 +17,7 @@ interface VitePluginUniPagesToEnumParams {
   output: string;
   isConstEnum?: boolean;
   enumName?: string;
+  onFinished?: () => void;
 }
 function resolvePath(path: string) {
   return resolve(process.cwd(), path);
@@ -102,7 +103,16 @@ async function writePages([str, config]: [
 }
 
 function bootstrap(pluginParams: VitePluginUniPagesToEnumParams) {
-  pipe(readPagesJson, compileEnumType, generatorEnum, writePages)(pluginParams);
+  const { onFinished = noop, ...restParams } = pluginParams;
+
+  const taskFn = pipe(
+    readPagesJson,
+    compileEnumType,
+    generatorEnum,
+    writePages,
+    onFinished,
+  );
+  taskFn(restParams);
 }
 
 const buildStartBootstrap = defineOnceFn(bootstrap);
