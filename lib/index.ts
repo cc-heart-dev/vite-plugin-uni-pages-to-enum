@@ -84,8 +84,10 @@ function generatorEnum([enumTypeList, config]: [
   const assignKeywords = config.isConstEnum ? "" : "=";
   let str = `export const ${enumKeywords}${enumName} ${assignKeywords} {\n`;
 
+  const attributeAssignKeywords = config.isConstEnum? " =" : ":";
+
   (enumTypeList || []).forEach((target) => {
-    str += "\t" + target.field + "=" + "\t" + `'${target.path}'` + ",";
+    str += "\t" + target.field + attributeAssignKeywords + ` '${target.path}'` + ",";
     if (target.comment) {
       str += "\t" + "//" + target.comment;
     }
