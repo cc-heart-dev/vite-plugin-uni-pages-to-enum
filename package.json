@@ -2,12 +2,12 @@
   "name": "@cc-heart/vite-plugin-uni-pages-to-enum",
   "version": "0.0.2",
   "type": "module",
+  "author": "Carl Chen",
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "a plugin that transforms uni-app pages.json",
   "keywords": ["vite-plugin", "uni-app", "pages-to-enum"],
-  "author": "carl chen",
-  "license": "MIT",
   "files": [
     "dist",
     "package.json"

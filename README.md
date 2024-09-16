@@ -1,6 +1,6 @@
 # vite-plugin-uni-pages-to-enum
 
-vite-plugin-uni-pages-to-enum 是一个 Vite 插件，用于将 uni-app 项目中的 pages.json 路由配置文件转换为 TypeScript Enum，以便在代码中更安全地使用路由路径。
+vite-plugin-uni-pages-to-enum 是一个 Vite 插件，用于将 uni-app 项目中的 pages.json 路由配置文件转换为常量枚举，以便在代码中更安全地使用路由路径。
 
 ## 安装
 
@@ -30,7 +30,9 @@ export default defineConfig({
 });
 ```
 
-该插件会根据配置读取文件，并且生成相应的 `ts Enum` 文件,例如 `page.json` 包含：
+该插件会根据配置读取文件，并且生成相应的路由枚举路径
+
+例如 `page.json` 包含：
 
 ```json
 {
@@ -56,6 +58,8 @@ export default defineConfig({
 则会生成以下的内容：
 
 ```ts
+// isConstEnum: false, export const PAGES = { ... }
+
 export const enum PAGES {
   PAGES_INDEX_INDEX = '/pages/index/index',
   PAGES_DELIVERY_ADD_CONSIGNEE = '/pages/delivery/add-consignee',

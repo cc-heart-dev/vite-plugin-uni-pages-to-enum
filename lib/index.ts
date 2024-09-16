@@ -80,8 +80,9 @@ function generatorEnum([enumTypeList, config]: [
   VitePluginUniPagesToEnumParams,
 ]) {
   const enumName = config.enumName || "PAGES";
-  const constKeyword = config.isConstEnum ? "const " : "";
-  let str = `export ${constKeyword} enum ${enumName} {\n`;
+  const enumKeywords = config.isConstEnum ? "enum " : "";
+  const assignKeywords = config.isConstEnum ? "" : "=";
+  let str = `export const ${enumKeywords}${enumName} ${assignKeywords} {\n`;
 
   (enumTypeList || []).forEach((target) => {
     str += "\t" + target.field + "=" + "\t" + `'${target.path}'` + ",";

@@ -8,7 +8,7 @@ let tsConfig = await readFile(
   "utf-8",
 );
 tsConfig = JSON.parse(tsConfig);
-console.log(tsConfig);
+
 export default {
   input: "./lib/index.ts",
   output: [
