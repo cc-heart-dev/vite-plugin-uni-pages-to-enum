@@ -1,6 +1,6 @@
 {
   "name": "@cc-heart/vite-plugin-uni-pages-to-enum",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "author": "Carl Chen",
   "license": "MIT",
